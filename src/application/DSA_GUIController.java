@@ -207,6 +207,7 @@ public class DSA_GUIController implements Initializable{
 		lineChart.getData().clear();
 		Result.setText("");
 		Result.clear();
+		
 	}
 	
 	public void light_loadSelection(){
@@ -232,14 +233,13 @@ public class DSA_GUIController implements Initializable{
 			
 			TextField_Cylinder.clear();
 			TextField_HeadPos.clear();
-			TextField_RequestQueue.clear();
-			
+			TextField_RequestQueue.clear();			
 		}
 	}
 	
 	public void medium_loadSelection(){
 		if(mediumLoad.isSelected()){
-			//predefined light load
+			//predefined light load jnfjrfjw
 			TextField_Cylinder.setText("1000");
 			TextField_HeadPos.setText("731");
 			TextField_RequestQueue.setText("310 672 289 21 943 401 822 187 518");

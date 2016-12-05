@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane maxHeight="589.0" maxWidth="723.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DSA_GUIController">
+   <items>
+      <SplitPane dividerPositions="0.39389736477115117" prefHeight="160.0" prefWidth="200.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#simulation" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TextField fx:id="TextField_Cylinder" layoutX="23.0" layoutY="51.0" prefHeight="25.0" prefWidth="161.0" />
+                  <Label layoutX="21.0" layoutY="34.0" prefHeight="17.0" prefWidth="161.0" text="Enter number of cylinder:" />
+                  <Label layoutX="23.0" layoutY="156.0" prefHeight="17.0" prefWidth="161.0" text="Enter request:" />
+                  <TextField fx:id="TextField_RequestQueue" layoutX="23.0" layoutY="173.0" prefHeight="25.0" prefWidth="236.0" />
+                  <Label layoutX="23.0" layoutY="198.0" prefHeight="17.0" prefWidth="161.0" style="-fx-font-style: italic;" text="E.g. 23 100 89 45" textFill="#0000008e" />
+                  <Label layoutX="23.0" layoutY="236.0" prefHeight="17.0" prefWidth="161.0" text="Choose algorithm:" />
+                  <ComboBox fx:id="algorithm" layoutX="23.0" layoutY="261.0" prefHeight="25.0" prefWidth="209.0" />
+                  <TextField fx:id="TextField_HeadPos" layoutX="24.0" layoutY="114.0" prefHeight="25.0" prefWidth="161.0" />
+                  <Label layoutX="22.0" layoutY="97.0" prefHeight="17.0" prefWidth="161.0" text="Enter current position of head:" />
+                  <Button fx:id="Button_ClearGraph" layoutX="185.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#clearGraph" text="Clear Graph" />
+                  <CheckBox fx:id="lightLoad" layoutX="32.0" layoutY="418.0" mnemonicParsing="false" onAction="#light_loadSelection" text="Light Load" />
+                  <CheckBox fx:id="heavyLoad" layoutX="32.0" layoutY="493.0" mnemonicParsing="false" onAction="#heavy_loadSelection" text="Heavy Load" />
+                  <CheckBox fx:id="mediumLoad" layoutX="32.0" layoutY="457.0" mnemonicParsing="false" onAction="#medium_loadSelection" text="Medium Load" />
+                  <Label layoutX="29.0" layoutY="523.0" prefHeight="17.0" prefWidth="193.0" style="-fx-font-style: italic;" text="Information: Choose one load only" textFill="#0000008e" />
+                  <Label layoutX="24.0" layoutY="383.0" prefHeight="17.0" prefWidth="161.0" text="Choose load:" />
+                  <Button layoutX="23.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#simulation" prefHeight="25.0" prefWidth="129.0" text="Run Simulation" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <LineChart fx:id="lineChart" layoutX="14.0" layoutY="17.0" prefHeight="387.0" prefWidth="399.0" title="Disk Scheduling">
+                    <xAxis>
+                      <NumberAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+                  <TextArea fx:id="Result" layoutX="17.0" layoutY="416.0" prefHeight="165.0" prefWidth="399.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </items>
+</SplitPane>

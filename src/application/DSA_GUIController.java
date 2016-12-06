@@ -103,7 +103,7 @@ public class DSA_GUIController implements Initializable{
 				
 				//get request queue as string and split by space
 				String inputString = TextField_RequestQueue.getText();
-				String[] queue = inputString.split("\\s");
+				String[] queue = inputString.split("\\s+");
 				
 				int temp = 0;
 				
@@ -205,9 +205,7 @@ public class DSA_GUIController implements Initializable{
 	
 	public void clearGraph(){		
 		lineChart.getData().clear();
-		Result.setText("");
-		Result.clear();
-		
+		Result.clear();		
 	}
 	
 	public void light_loadSelection(){
@@ -239,7 +237,7 @@ public class DSA_GUIController implements Initializable{
 	
 	public void medium_loadSelection(){
 		if(mediumLoad.isSelected()){
-			//predefined light load jnfjrfjw
+			//predefined light load
 			TextField_Cylinder.setText("1000");
 			TextField_HeadPos.setText("731");
 			TextField_RequestQueue.setText("310 672 289 21 943 401 822 187 518");

@@ -3,4 +3,6 @@
 	-fx-font-family: verdana;
 	-fx-font-size: 14;
 }
-
+#lineChart.chart{
+	-fx-padding: -10px;
+}

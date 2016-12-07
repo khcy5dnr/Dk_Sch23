@@ -15,7 +15,7 @@
    <items>
       <SplitPane dividerPositions="0.39389736477115117" prefHeight="160.0" prefWidth="200.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#simulation" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <TextField fx:id="TextField_Cylinder" layoutX="23.0" layoutY="51.0" prefHeight="25.0" prefWidth="161.0" />
                   <Label layoutX="21.0" layoutY="34.0" prefHeight="17.0" prefWidth="161.0" text="Enter number of cylinder:" />
@@ -39,10 +39,10 @@
                <children>
                   <LineChart fx:id="lineChart" layoutX="14.0" layoutY="17.0" prefHeight="387.0" prefWidth="399.0" title="Disk Scheduling">
                     <xAxis>
-                      <NumberAxis side="BOTTOM" />
+                      <NumberAxis side="BOTTOM" label="Time (s)"/>
                     </xAxis>
                     <yAxis>
-                      <NumberAxis side="LEFT" />
+                      <NumberAxis side="LEFT" label="Request"/>
                     </yAxis>
                   </LineChart>
                   <TextArea fx:id="Result" layoutX="17.0" layoutY="416.0" prefHeight="165.0" prefWidth="399.0" />

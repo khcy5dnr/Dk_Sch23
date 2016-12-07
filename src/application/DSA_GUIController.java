@@ -83,17 +83,18 @@ public class DSA_GUIController implements Initializable{
 				boolean flag = true;
 				
 				//get cylinder
-				cylinder = Integer.parseInt(TextField_Cylinder.getText());
+				cylinder = Integer.parseInt(TextField_Cylinder.getText().trim());
 				
 				//get current position
-				currentPosition = Integer.parseInt(TextField_HeadPos.getText());
+				currentPosition = Integer.parseInt(TextField_HeadPos.getText().trim());
 				
 				//check current position if its between 0 to cylinder
 				//raise alert if condition not met
 				if(currentPosition > (cylinder-1)|| currentPosition < 0){
 					alert.setTitle("WARNING!");
 					alert.setHeaderText(null);
-					alert.setContentText("Invalid current position: "+ currentPosition +".\nPlease enter current position between 0 to "+(cylinder-1));
+					alert.setContentText("Invalid current position: "+ currentPosition +
+							".\nPlease enter current position between 0 to "+(cylinder-1));
 					alert.showAndWait();
 					flag = false;
 				}
@@ -102,7 +103,7 @@ public class DSA_GUIController implements Initializable{
 				algorithmType = algorithm.getValue();
 				
 				//get request queue as string and split by space
-				String inputString = TextField_RequestQueue.getText();
+				String inputString = TextField_RequestQueue.getText().trim();
 				String[] queue = inputString.split("\\s+");
 				
 				int temp = 0;
@@ -114,7 +115,8 @@ public class DSA_GUIController implements Initializable{
 					if(temp > (cylinder-1) || temp < 0){
 						alert.setTitle("WARNING!");
 						alert.setHeaderText(null);
-						alert.setContentText("Invalid request: "+ temp +".\nPlease enter request between 0 to "+(cylinder-1));
+						alert.setContentText("Invalid request: "+ temp +
+								".\nPlease enter request between 0 to "+(cylinder-1));
 						alert.showAndWait();
 						flag = false;
 						break;
@@ -133,7 +135,7 @@ public class DSA_GUIController implements Initializable{
 		catch(Exception e){
 			alert.setTitle("WARNING!");
 			alert.setHeaderText(null);
-			alert.setContentText("Please fill in the required fields.");
+			alert.setContentText("Please fill in the required fields.\n");
 			alert.showAndWait();			
 		}
 	}

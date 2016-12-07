@@ -64,14 +64,16 @@ public class C_Look {
 			}
 		}
 		
-		currentPosition = requestQueue.get(position);		
-		processedQueue.add(currentPosition);
-		
-		//add total seek time from the last cylinder to the request higher than head
-		for(int i = position+1; i < requestQueue.size(); i++){
-			sum += Math.abs(requestQueue.get(i) - currentPosition);
-			currentPosition = requestQueue.get(i);
+		if(position < requestQueue.size()){
+			currentPosition = requestQueue.get(position);		
 			processedQueue.add(currentPosition);
+			
+			//add total seek time from the last cylinder to the request higher than head
+			for(int i = position+1; i < requestQueue.size(); i++){
+				sum += Math.abs(requestQueue.get(i) - currentPosition);
+				currentPosition = requestQueue.get(i);
+				processedQueue.add(currentPosition);
+			}
 		}
 	}
 	
